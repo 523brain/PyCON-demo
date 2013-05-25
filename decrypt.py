@@ -7,7 +7,7 @@ def testPass(cryptPass, dic):
     salt = cryptPass[0:2]
     dictFile = open(dic, 'r')
 
-    for word in dictFile.readlines():
+    for word in dictFile:
         word = word.strip('\n')
         ced = crypt.crypt(word, salt)
         if (ced == cryptPass):
